@@ -68,10 +68,10 @@ $surface-roles: (
   "surface-container-highest": 50,
 );
 $typography-roles: (
-  "typography-text": 50,
-  "typography-text-less": 55,
-  "typography-text-disabled": 70,
-  "typography-text-contrast": 100,
+  "typo-text": 50,
+  "typo-text-less": 55,
+  "typo-text-disabled": 70,
+  "typo-text-contrast": 100,
 );
 
 @mixin generate-roles($prefix, $roles, $property) {
