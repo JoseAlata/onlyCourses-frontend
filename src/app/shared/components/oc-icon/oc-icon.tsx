@@ -11,22 +11,18 @@ interface OcIconProps {
 export default function OcIcon({ name, color, bgColor, padding, borderRadius }: Readonly<OcIconProps>) {
   const iconBgColor = bgColor || "transparent",
         iconBorderRadius = borderRadius || "medium",
+        iconColor = color || "base",
         iconPadding = padding || "small",
         iconClass = `
           ${iconBgColor}
+          oc-typo-text-${iconColor}
           oc-shape-${iconBorderRadius} 
           oc-padding-${iconPadding} 
           oc-icon-container`;
 
-  function iconStyles(): Record<string, string>{
-    return {
-      "--color": color || "var(--oc-sys-color-typo-text)",
-    }
-  }
-
   return (
     <div className={iconClass}>
-      <span className="oc-icon material-symbols-outlined" style={iconStyles()}>{name}</span>
+      <span className="oc-icon material-symbols-outlined">{name}</span>
     </div>
   )
 }
