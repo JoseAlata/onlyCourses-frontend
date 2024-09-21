@@ -2,22 +2,18 @@
    position: relative;
    display: inline-flex;
    align-items: center;
- 
+  
    input {
      width: 100%;
      padding: 8px 12px;
      transition: border-color 0.3s ease;
-     
-     &.oc-padding-left {
-       padding-left: 32px; 
-     }
+     background-color: transparent;
      
      &.oc-padding-right {
        padding-right: 32px; 
      }
-
-     &:focus {
-       outline: 1px solid #007bff;
+     &:focus{
+      outline: none;
      }
 
      &:disabled {
