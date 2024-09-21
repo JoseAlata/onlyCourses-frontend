@@ -3,7 +3,7 @@
 import { Login } from '@/app/login';
 export default function Home() {
   return (
-    <section className="oc-surface-container-highest h-screen">
+    <section className="h-screen">
       <Login />
     </section>
   );

@@ -1,11 +1,12 @@
 'use client';
 import './login.scss';
-import Image from 'next/image';
 import OcTheme from '@/app/shared/components/oc-theme';
-import OcLanguage from '../shared/components/oc-language';
 import { useTranslations } from 'next-intl';
-import OcInput from '../shared/components/oc-input/oc-input';
+import Image from 'next/image';
+
 import OcButton from '../shared/components/oc-button';
+import OcInput from '../shared/components/oc-input/oc-input';
+import OcLanguage from '../shared/components/oc-language';
 
 export default function Login() {
   const t = useTranslations('Login');
@@ -48,7 +49,7 @@ export default function Login() {
           </section>
         </div>
       </form>
-      <div className="login-background oc-surface-container-high">
+      <div className="login-background">
         <Image src={loginImage} alt="login-background" layout="responsive" width={100} height={100} />
       </div>
     </section>
