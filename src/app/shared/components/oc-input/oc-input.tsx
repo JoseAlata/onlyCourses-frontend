@@ -30,17 +30,17 @@ export default function OcInput({
   }
 
   return (
-   <div className={`oc-input ${right ? 'input-right' : 'input-left'}`} style={inputStyles()}>
+   <div className={`oc-input oc-surface-container oc-shape-${inputBorderRadius} ${right ? 'input-right' : 'input-left'}`}>
    {nameIcon && (
      <div className={`oc-icon-container ${right ? 'input-right' : 'input-left'}`}>
-       <OcIcon name={nameIcon} />
+       <OcIcon name={nameIcon} color="less" />
      </div>
    )}
    
    <input
      type="text"
      placeholder={placeholder}
-     className={`oc-shape-${inputBorderRadius} ${right ? 'oc-padding-right' : 'oc-padding-left'} oc-padding-small`}
+     className={` ${right ? 'oc-padding-right' : 'oc-padding-left'} oc-padding-small`}
      disabled={inputDisabled}
      style={inputStyles()}
    />
