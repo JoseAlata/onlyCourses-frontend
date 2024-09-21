@@ -1,4 +1,4 @@
-import createNextIntlPlugin from "next-intl/plugin";
+import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -10,10 +10,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'i.postimg.cc',
         port: '',
-        pathname: '/**', 
-      }
-    ]
-  }
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default withNextIntl(nextConfig);

@@ -1,1 +1,1 @@
-export {default} from './oc-selector-language'
+export { default } from './oc-selector-language';

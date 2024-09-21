@@ -1,6 +1,6 @@
-.selector{
+.selector {
   cursor: pointer;
-  &-language{
+  &-language {
     cursor: pointer;
     outline: none;
     background-color: transparent;
@@ -9,8 +9,8 @@
     background-color: hsla(0, 0%, 0%, 0.1);
   }
 }
-body.body-dark{
-  .selector:hover{
+body.body-dark {
+  .selector:hover {
     background-color: hsla(0, 0%, 100%, 0.1);
   }
 }

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import OcIcon from '../oc-icon';
 import './oc-theme.scss';
 
-export default function OcTheme(){
+export default function OcTheme() {
   const [iconTheme, setIconTheme] = useState('dark_mode');
   const [isDark, setIsDark] = useState(false);
 

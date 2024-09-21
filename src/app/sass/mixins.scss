@@ -1,26 +1,26 @@
-@use "sass:map";
-@use "sass:list";
-@import "./variables";
+@use 'sass:map';
+@use 'sass:list';
+@import './variables';
 //SURFACES COLORS
 $surface-tones-dark: (
-  "70": 8 w,
-  "80": 8.5 w,
-  "90": 9.5 w,
+  '70': 8 w,
+  '80': 8.5 w,
+  '90': 9.5 w,
 );
 $surface-tones-light: (
-  "70": 8 b,
-  "80": 8.5 b,
-  "90": 9.5 b,
+  '70': 8 b,
+  '80': 8.5 b,
+  '90': 9.5 b,
 );
 $neutral-variant-tones: (
-  "55": 8 w,
-  "70": 5 w,
-  "100": 0.5 w,
+  '55': 8 w,
+  '70': 5 w,
+  '100': 0.5 w,
 );
 $dark-neutral-variant-tones: (
-  "55": 8 b,
-  "70": 5 b,
-  "100": 0.5 b,
+  '55': 8 b,
+  '70': 5 b,
+  '100': 0.5 b,
 );
 
 @mixin generate-tones($base-color, $prefix, $tones) {
@@ -31,47 +31,31 @@ $dark-neutral-variant-tones: (
   @each $tone, $pair in $tones {
     $value: list.nth($pair, 1);
     $mix-indicator: list.nth($pair, 2);
-    $mix-color: if($mix-indicator == "b", black, white);
+    $mix-color: if($mix-indicator == 'b', black, white);
 
     :root {
-      --oc-ref-palette-#{$prefix}-#{$tone}: #{color-mix(
-          in hsl shorter hue,
-          $base-color ($value) * 10%,
-          $mix-color
-        )};
+      --oc-ref-palette-#{$prefix}-#{$tone}: #{color-mix(in hsl shorter hue, $base-color ($value) * 10%, $mix-color)};
     }
   }
 }
 
-@include generate-tones(var(--neutral-color), "neutral", $surface-tones-light);
-@include generate-tones(
-  var(--dark-neutral-color),
-  "dark-neutral",
-  $surface-tones-dark
-);
-@include generate-tones(
-  var(--neutral-variant-color),
-  "neutral-variant",
-  $neutral-variant-tones
-);
-@include generate-tones(
-  var(--dark-neutral-variant-color),
-  "dark-neutral-variant",
-  $dark-neutral-variant-tones
-);
+@include generate-tones(var(--neutral-color), 'neutral', $surface-tones-light);
+@include generate-tones(var(--dark-neutral-color), 'dark-neutral', $surface-tones-dark);
+@include generate-tones(var(--neutral-variant-color), 'neutral-variant', $neutral-variant-tones);
+@include generate-tones(var(--dark-neutral-variant-color), 'dark-neutral-variant', $dark-neutral-variant-tones);
 
 // Define roles y tonos
 $surface-roles: (
-  "surface-container-low": 70,
-  "surface-container": 80,
-  "surface-container-high": 90,
-  "surface-container-highest": 50,
+  'surface-container-low': 70,
+  'surface-container': 80,
+  'surface-container-high': 90,
+  'surface-container-highest': 50,
 );
 $typography-roles: (
-  "typo-text-base": 50,
-  "typo-text-less": 55,
-  "typo-text-disabled": 70,
-  "typo-text-contrast": 100,
+  'typo-text-base': 50,
+  'typo-text-less': 55,
+  'typo-text-disabled': 70,
+  'typo-text-contrast': 100,
 );
 
 @mixin generate-roles($prefix, $roles, $property) {
@@ -90,8 +74,8 @@ $typography-roles: (
   }
 }
 
-@include generate-roles("neutral", $surface-roles, "background-color");
-@include generate-roles("neutral-variant", $typography-roles, "color");
+@include generate-roles('neutral', $surface-roles, 'background-color');
+@include generate-roles('neutral-variant', $typography-roles, 'color');
 
 $base-font-size: 16px;
 $sizes: (
@@ -245,7 +229,7 @@ $settings: (
     medium: 8px,
     large: 16px,
     xlarge: 20px,
-    xxlarge: 32px
+    xxlarge: 32px,
   ),
   padding: (
     small: 8px,
@@ -302,5 +286,5 @@ $settings: (
   }
 }
 
-@include generate-styles("gap", gap);
-@include generate-padding-styles("padding", padding);
+@include generate-styles('gap', gap);
+@include generate-padding-styles('padding', padding);

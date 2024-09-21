@@ -1,1 +1,1 @@
-export {default } from './oc-theme';
+export { default } from './oc-theme';

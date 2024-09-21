@@ -1,39 +1,39 @@
 .oc-input {
-   position: relative;
-   display: inline-flex;
-   align-items: center;
-  
-   input {
-     width: 100%;
-     padding: 8px 12px;
-     transition: border-color 0.3s ease;
-     background-color: transparent;
-     
-     &.oc-padding-right {
-       padding-right: 32px; 
-     }
-     &:focus{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+    padding: 8px 12px;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+
+    &.oc-padding-right {
+      padding-right: 32px;
+    }
+    &:focus {
       outline: none;
-     }
+    }
 
-     &:disabled {
-       background-color: #f0f0f0;
-       cursor: not-allowed;
-     }
-   }
+    &:disabled {
+      background-color: #f0f0f0;
+      cursor: not-allowed;
+    }
+  }
 
-   .oc-icon-container {
-     position: absolute;
-     top: 50%;
-     transform: translateY(-50%);
-     pointer-events: none;
+  .oc-icon-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 
-     &.input-left {
-       left: 0px; 
-     }
+    &.input-left {
+      left: 0px;
+    }
 
-     &.input-right {
-       right: 35px; 
-     }
-   }
+    &.input-right {
+      right: 35px;
+    }
+  }
 }

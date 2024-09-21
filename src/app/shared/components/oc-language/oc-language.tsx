@@ -1,26 +1,25 @@
-"use-client"
-import { useLocale, useTranslations } from "next-intl";
-import OcSelectorLanguage from "./oc-selector-language";
+'use-client';
+import { useLocale, useTranslations } from 'next-intl';
 
+import OcSelectorLanguage from './oc-selector-language';
 
-export default function OcLanguage(){
-  const t = useTranslations("INSERTAR");
+export default function OcLanguage() {
+  const t = useTranslations('INSERTAR');
   const locale = useLocale();
-  return(
+  return (
     <OcSelectorLanguage
       defaultValue={locale}
       items={[
         {
-          value: "en",
-          label: t("en"),
+          value: 'en',
+          label: t('en'),
         },
         {
-          value: "es",
-          label: t("es"),
+          value: 'es',
+          label: t('es'),
         },
       ]}
-      label={t("label")}
+      label={t('label')}
     />
-  ) 
+  );
 }
-

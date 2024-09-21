@@ -1,1 +1,1 @@
-export { default } from "./oc-button";
+export { default } from './oc-button';

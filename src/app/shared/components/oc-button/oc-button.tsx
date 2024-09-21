@@ -1,5 +1,5 @@
-"use-client";
-import "./oc-button.scss";
+'use-client';
+import './oc-button.scss';
 interface OcButtonProps {
   disabled?: boolean;
   onClick?: () => void;
@@ -8,20 +8,14 @@ interface OcButtonProps {
   borderRadius?: string;
 }
 
-export default function OcButton({
-  disabled,
-  onClick,
-  bgColor,
-  children,
-  borderRadius,
-}: Readonly<OcButtonProps>) {
+export default function OcButton({ disabled, onClick, bgColor, children, borderRadius }: Readonly<OcButtonProps>) {
   const buttonDisabled = disabled || false,
-    buttonBorderRadius = borderRadius || "medium",
+    buttonBorderRadius = borderRadius || 'medium',
     buttonOnClick = onClick || (() => {});
 
   function iconStyles(): Record<string, string> {
     return {
-      "--bg-color": bgColor || "blue",
+      '--bg-color': bgColor || 'blue',
     };
   }
 

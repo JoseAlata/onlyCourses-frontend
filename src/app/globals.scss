@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import 'material-symbols';
-@import "sass/mixins";
-
+@import 'sass/mixins';
 
 body {
   color: var(--oc-sys-color-typo-text-base);

@@ -2,18 +2,18 @@
   "HomePage": {
     "title": "Hello World!"
   },
-  "Login":{
+  "Login": {
     "title": "Welcome",
     "subtitle": "Welcome back! Please enter your details.",
-    "fields":{
+    "fields": {
       "email": "Email",
       "password": "Password"
     },
-    "footer":{
+    "footer": {
       "rememberMe": "Remember Me",
       "forgotPassword": "Forgot Password?"
     },
-    "buttons":{
+    "buttons": {
       "login": "Login"
     }
   }
