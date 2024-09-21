@@ -9,18 +9,18 @@ interface OcIconProps {
 }
 
 export default function OcIcon({ name, color, bgColor, padding, borderRadius }: Readonly<OcIconProps>) {
-  const iconPadding = padding || "oc-padding-small",
-        iconBorderRadius = borderRadius || "oc-shape-medium",
-        iconBgColor = bgColor || "transparent",
+  const iconBgColor = bgColor || "transparent",
+        iconBorderRadius = borderRadius || "medium",
+        iconPadding = padding || "small",
         iconClass = `
-          ${iconBgColor} 
-          ${iconPadding} 
-          ${iconBorderRadius} 
+          ${iconBgColor}
+          oc-shape-${iconBorderRadius} 
+          oc-padding-${iconPadding} 
           oc-icon-container`;
 
   function iconStyles(): Record<string, string>{
     return {
-      "--color": color || "var(--oc-sys-color-typography-text)",
+      "--color": color || "var(--oc-sys-color-typo-text)",
     }
   }
 
