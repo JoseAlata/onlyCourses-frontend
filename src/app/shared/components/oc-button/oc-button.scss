@@ -1,0 +1,12 @@
+.oc-button {
+  background: color-mix(in oklab, var(--bg-color), white 10%);
+  width: 100%;
+  &:hover {
+    background: color-mix(in oklab, var(--bg-color), black 10%);
+  }
+  &:disabled {
+    color: var(--oc-typo-text-disabled);
+    background: color-mix(in oklab, var(--bg-color), white 70%);
+    cursor: not-allowed;
+  }
+}
