@@ -1,0 +1,15 @@
+.selector{
+  &-language{
+    outline: none;
+    background-color: transparent;
+  }
+  cursor: pointer;
+  &:hover {
+    background-color: hsla(0, 0%, 0%, 0.1);
+  }
+}
+body.body-dark{
+  .selector:hover{
+    background-color: hsla(0, 0%, 100%, 0.1);
+  }
+}
