@@ -68,7 +68,7 @@ $surface-roles: (
   "surface-container-highest": 50,
 );
 $typography-roles: (
-  "typo-text": 50,
+  "typo-text-base": 50,
   "typo-text-less": 55,
   "typo-text-disabled": 70,
   "typo-text-contrast": 100,
@@ -245,6 +245,7 @@ $settings: (
     medium: 8px,
     large: 16px,
     xlarge: 20px,
+    xxlarge: 32px
   ),
   padding: (
     small: 8px,
