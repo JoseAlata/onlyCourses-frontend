@@ -2,14 +2,16 @@
 import './login.scss';
 import Image from "next/image";
 import OcTheme from "@/app/shared/components/oc-theme";
+import OcLanguage from '../shared/components/oc-language';
 
 export default function Login() {
   const loginImage = 'https://i.postimg.cc/rwvyck9n/login.png';
   const logoImage = 'https://i.postimg.cc/Y9r5BnTD/YachayL.png';
   return (
     <section className="login">
-      <aside className='login-theme oc-padding-small'>
+      <aside className='login-theme oc-padding-small oc-gap-small'>
         <OcTheme/>
+        <OcLanguage/>
       </aside>
       <section className="login-main">
         <div className="login-form oc-padding-medium">
