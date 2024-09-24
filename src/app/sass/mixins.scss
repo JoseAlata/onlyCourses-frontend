@@ -288,3 +288,24 @@ $settings: (
 
 @include generate-styles('gap', gap);
 @include generate-padding-styles('padding', padding);
+
+$primary-color-tones: (
+  'default': 10 w,
+  'hover': 7 b,
+  'disabled': 7 w,
+);
+
+@mixin generate-primary-color-classes($base-color, $prefix, $tones) {
+  @each $state, $pair in $tones {
+    $value: list.nth($pair, 1);
+    $mix-indicator: list.nth($pair, 2);
+    $mix-color: if($mix-indicator == 'b', black, white);
+
+    :root {
+      --oc-#{$prefix}-#{$state}: #{color-mix(in hsl shorter hue, $base-color ($value) * 10%, $mix-color)};
+    }
+  }
+}
+
+// Uso de la mezcla para generar clases basadas en --primary-color
+@include generate-primary-color-classes(var(--primary-color), 'primary', $primary-color-tones);
