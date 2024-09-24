@@ -3,12 +3,20 @@ import './oc-button.scss';
 interface OcButtonProps {
   disabled?: boolean;
   onClick?: () => void;
+  color?: string;
   bgColor?: string;
-  children?: string;
+  children?: React.ReactNode;
   borderRadius?: string;
 }
 
-export default function OcButton({ disabled, onClick, bgColor, children, borderRadius }: Readonly<OcButtonProps>) {
+export default function OcButton({
+  disabled,
+  onClick,
+  bgColor,
+  color,
+  children,
+  borderRadius,
+}: Readonly<OcButtonProps>) {
   const buttonDisabled = disabled || false,
     buttonBorderRadius = borderRadius || 'medium',
     buttonOnClick = onClick || (() => {});
@@ -16,12 +24,13 @@ export default function OcButton({ disabled, onClick, bgColor, children, borderR
   function iconStyles(): Record<string, string> {
     return {
       '--bg-color': bgColor || 'blue',
+      '--color-text': color || 'white',
     };
   }
 
   return (
     <button
-      className={`oc-button oc-typo-text-contrast oc-shape-${buttonBorderRadius} oc-padding-small ${buttonBorderRadius}`}
+      className={`oc-button oc-gap-medium flex items-center justify-center oc-shape-${buttonBorderRadius} oc-padding-small ${buttonBorderRadius}`}
       style={iconStyles()}
       disabled={buttonDisabled}
       onClick={buttonOnClick}
