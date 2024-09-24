@@ -30,7 +30,7 @@ export default function OcButton({
 
   return (
     <button
-      className={`oc-button oc-gap-medium flex items-center justify-center oc-shape-${buttonBorderRadius} oc-padding-small ${buttonBorderRadius}`}
+      className={`oc-button oc-shape-${buttonBorderRadius} oc-padding-small ${buttonBorderRadius}`}
       style={iconStyles()}
       disabled={buttonDisabled}
       onClick={buttonOnClick}
