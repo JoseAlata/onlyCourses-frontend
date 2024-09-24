@@ -18,7 +18,7 @@ export default function OcTheme() {
   }
 
   return (
-    <button className="theme oc-shape-full" onClick={toggleTheme}>
+    <button className="theme oc-shape-full oc-typo-text-base" onClick={toggleTheme}>
       <OcIcon name={iconTheme} />
     </button>
   );
