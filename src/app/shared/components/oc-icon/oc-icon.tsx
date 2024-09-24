@@ -2,20 +2,17 @@
 import './oc-icon.scss';
 interface OcIconProps {
   name: string;
-  color?: string;
   bgColor?: string;
   padding?: string;
   borderRadius?: string;
 }
 
-export default function OcIcon({ name, color, bgColor, padding, borderRadius }: Readonly<OcIconProps>) {
+export default function OcIcon({ name, bgColor, padding, borderRadius }: Readonly<OcIconProps>) {
   const iconBgColor = bgColor || 'transparent',
     iconBorderRadius = borderRadius || 'medium',
-    iconColor = color || 'base',
     iconPadding = padding || 'small',
     iconClass = `
           ${iconBgColor}
-          oc-typo-text-${iconColor}
           oc-shape-${iconBorderRadius} 
           oc-padding-${iconPadding} 
           oc-icon-container`;
