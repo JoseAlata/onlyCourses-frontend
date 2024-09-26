@@ -232,6 +232,7 @@ $settings: (
     xxlarge: 32px,
   ),
   padding: (
+    xsmall: 4px,
     small: 8px,
     medium: 16px,
     large: 20px,
@@ -291,12 +292,15 @@ $settings: (
 @include generate-padding-styles('padding', padding);
 
 $primary-color-tones: (
-  'default': 10 w,
-  'hover': 7 b,
+  'hover': 9 b,
   'disabled': 7 w,
 );
 
-@mixin generate-primary-color-classes($base-color, $prefix, $tones) {
+@mixin generate-color($base-color, $prefix, $tones) {
+  :root {
+    --oc-#{$prefix}: #{$base-color};
+  }
+
   @each $state, $pair in $tones {
     $value: list.nth($pair, 1);
     $mix-indicator: list.nth($pair, 2);
@@ -309,4 +313,4 @@ $primary-color-tones: (
 }
 
 // Uso de la mezcla para generar clases basadas en --primary-color
-@include generate-primary-color-classes(var(--primary-color), 'primary', $primary-color-tones);
+@include generate-color(var(--primary-color), 'primary', $primary-color-tones);

@@ -1,6 +1,11 @@
 {
   "HomePage": {
-    "title": "Hello World!"
+    "sidebar": {
+      "menu-item-home": "Home",
+      "menu-item-courses": "Courses",
+      "menu-item-progress": "Progress",
+      "change-theme": "Change Theme"
+    }
   },
   "Login": {
     "title": "Welcome",

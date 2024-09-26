@@ -1,0 +1,10 @@
+.sidebar {
+  background-color: var(--oc-sys-color-surface-container-high);
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+
+  &-hr {
+    border: 1px solid var(--oc-sys-color-surface-container);
+  }
+}
