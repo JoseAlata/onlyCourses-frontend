@@ -1,64 +1,51 @@
-import { useState, useEffect } from 'react';
+'use-client';
 import './oc-input.scss';
 import OcIcon from '../oc-icon/oc-icon';
 
 interface OcInputProps {
   placeholder: string;
-  nameIcon?: string;
+  nameIcon?: string; // Propiedad opcional para el nombre del ícono
   right?: boolean;
   disabled?: boolean;
-  rules?: Array<(value: string) => string | true>;
+  bgColor?: string;
+  borderRadius?: string;
 }
 
 export default function OcInput({
   disabled,
+  bgColor,
+  borderRadius,
   placeholder,
   right,
   nameIcon,
-  rules = [],
 }: Readonly<OcInputProps>) {
-  const [inputValue, setInputValue] = useState('');
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const inputDisabled = disabled || false;
+  const inputBorderRadius = borderRadius || 'medium';
 
-  useEffect(() => {
-    const validate = () => {
-      for (let rule of rules) {
-        const result = rule(inputValue);
-        if (result !== true) {
-          setErrorMessage(result);
-          return;
-        }
-      }
-      setErrorMessage(null);
+  // Función para aplicar estilos dinámicos
+  function inputStyles(): Record<string, string> {
+    return {
+      '--bg-color': bgColor || 'white',
     };
-
-    validate();
-  }, [inputValue, rules]);
+  }
 
   return (
-    <div className="oc-input">
-      <div className={`oc-input-wrapper ${inputDisabled ? 'disabled' : ''}`}>
-        {nameIcon && (
-          <div className={`oc-icon-container ${right ? 'input-right' : 'input-left'}`}>
-            <OcIcon name={nameIcon} />
-          </div>
-        )}
-
-        <input
-          type="text"
-          placeholder={placeholder}
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          className={`oc-shape-medium ${nameIcon ? (right ? 'oc-padding-right' : 'oc-padding-left') : ''} oc-padding-small`}
-          disabled={inputDisabled}
-        />
-      </div>
-      {errorMessage && (
-        <div className="oc-error-message">
-          {errorMessage}
+    <div
+      className={`oc-input oc-surface-container oc-shape-${inputBorderRadius} ${right ? 'input-right' : 'input-left'}`}
+    >
+      {nameIcon && (
+        <div className={`oc-icon-container ${right ? 'input-right' : 'input-left'}`}>
+          <OcIcon name={nameIcon} color="less" />
         </div>
       )}
+
+      <input
+        type="text"
+        placeholder={placeholder}
+        className={` ${right ? 'oc-padding-right' : 'oc-padding-left'} oc-padding-small`}
+        disabled={inputDisabled}
+        style={inputStyles()}
+      />
     </div>
   );
 }
