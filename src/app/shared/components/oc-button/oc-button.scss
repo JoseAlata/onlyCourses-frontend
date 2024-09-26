@@ -1,12 +1,11 @@
 .oc-button {
   color: var(--color-text);
-  background: var(--oc-primary-default);
+  background: var(--oc-primary);
   width: 100%;
   &:hover {
     background: var(--oc-primary-hover);
   }
   &:disabled {
-    color: color-mix(in oklab, var(--color-text), white 80%);
     background: var(--oc-primary-disabled);
     cursor: not-allowed;
   }
