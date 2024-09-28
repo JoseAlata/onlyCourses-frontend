@@ -20,7 +20,7 @@
     },
     "buttons": {
       "login": "Iniciar Sesión",
-      "create": "Crear Cuenta"
+      "create": "Crear una cuenta"
     }
   },
   "Register": {
@@ -38,7 +38,8 @@
       "confirmPassword": "Confirmar Contraseña"
     },
     "buttons": {
-      "register": "Registrarse"
+      "register": "Registrarse",
+      "hasAccount": "¿Ya tienes una cuenta?"
     },
     "terms": {
       "text": "Al registrarme, acepto los",

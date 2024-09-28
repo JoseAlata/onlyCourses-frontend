@@ -6,9 +6,9 @@ import RegisterRole from '@/auth/components/register-role';
 import { useTranslations } from 'next-intl';
 import './register.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { getFields, groupedFields } from './register.constants';
-import Link from 'next/link';
 
 export default function Register() {
   const t = useTranslations('Register');

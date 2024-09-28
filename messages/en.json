@@ -38,7 +38,8 @@
       "confirmPassword": "Confirm Password"
     },
     "buttons": {
-      "register": "Register"
+      "register": "Register",
+      "hasAccount": "Already have an account?"
     },
     "terms": {
       "text": "By registering, I accept the",
