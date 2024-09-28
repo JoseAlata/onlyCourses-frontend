@@ -1,12 +1,11 @@
 'use client';
 import './login.scss';
-import OcTheme from '@/app/shared/components/oc-theme';
+import AuthBackground from '@/auth/components/auth-background';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 import OcButton from '../../shared/components/oc-button';
 import OcInput from '../../shared/components/oc-input/oc-input';
-import OcLanguage from '../../shared/components/oc-language';
 
 export default function Login() {
   const t = useTranslations('Login');
@@ -14,10 +13,6 @@ export default function Login() {
   const logoImage = 'https://i.postimg.cc/Y9r5BnTD/YachayL.png';
   return (
     <section className="login">
-      <aside className="login-theme oc-padding-small oc-gap-small">
-        <OcTheme />
-        <OcLanguage />
-      </aside>
       <form className="login-main">
         <div className="login-form oc-padding-large oc-gap-xxlarge">
           <div className="login-logo">
@@ -38,20 +33,18 @@ export default function Login() {
             </label>
             <div className="login-footer">
               <div className="login-footer__remember oc-gap-medium">
-                <input type="checkbox" />
+                <input type="checkbox" required />
                 <span className="oc-typo-label-medium">{t('footer.rememberMe')}</span>
               </div>
               <span className="login-footer__forgot oc-typo-label-medium">{t('footer.forgotPassword')}</span>
             </div>
             <div className="login-actions">
-              <OcButton bgColor="#0E77EA">{t('buttons.login')}</OcButton>
+              <OcButton>{t('buttons.login')}</OcButton>
             </div>
           </section>
         </div>
       </form>
-      <div className="login-background">
-        <Image src={loginImage} alt="login-background" layout="responsive" width={100} height={100} />
-      </div>
+      <AuthBackground src={loginImage} />
     </section>
   );
 }
