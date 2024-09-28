@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react';
 import './oc-input.scss';
 import OcIcon from '../oc-icon/oc-icon';
@@ -10,13 +11,7 @@ interface OcInputProps {
   rules?: Array<(value: string) => string | true>;
 }
 
-export default function OcInput({
-  disabled,
-  placeholder,
-  right,
-  nameIcon,
-  rules = [],
-}: Readonly<OcInputProps>) {
+export default function OcInput({ disabled, placeholder, right, nameIcon, rules = [] }: Readonly<OcInputProps>) {
   const [inputValue, setInputValue] = useState('');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const inputDisabled = disabled || false;
@@ -54,11 +49,7 @@ export default function OcInput({
           disabled={inputDisabled}
         />
       </div>
-      {errorMessage && (
-        <div className="oc-error-message">
-          {errorMessage}
-        </div>
-      )}
+      {errorMessage && <div className="oc-error-message">{errorMessage}</div>}
     </div>
   );
 }
