@@ -21,5 +21,10 @@
     "buttons": {
       "login": "Login"
     }
+  },
+  "LanguageSelector": {
+    "label": "Select Language",
+    "en": "English",
+    "es": "Spanish"
   }
 }

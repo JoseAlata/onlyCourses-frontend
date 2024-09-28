@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import OcSelectorLanguage from './oc-selector-language';
 
 export default function OcLanguage() {
-  const t = useTranslations('INSERTAR');
+  const t = useTranslations('LanguageSelector');
   const locale = useLocale();
   return (
     <OcSelectorLanguage

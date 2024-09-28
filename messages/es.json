@@ -21,5 +21,10 @@
     "buttons": {
       "login": "Iniciar Sesión"
     }
+  },
+  "LanguageSelector": {
+    "label": "Selecciona el idioma",
+    "en": "Inglés",
+    "es": "Español"
   }
 }
