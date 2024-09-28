@@ -22,6 +22,31 @@
       "login": "Iniciar Sesión"
     }
   },
+  "Register":{
+    "title": "Registrarse",
+    "subtitle": "¿Cuál es tu función?",
+    "roles": {
+      "student": "Estudiante",
+      "teacher": "Profesor"
+    },
+    "fields":{
+      "name": "Nombre",
+      "lastname": "Apellido",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar Contraseña"
+    },
+    "buttons":{
+      "register": "Registrarse"
+    },
+    "terms": {
+      "text": "Al registrarme, acepto los",
+      "termsAndConditions": "términos y condiciones",
+      "and": "y la",
+      "privacyPolicy": "política de privacidad",
+      "final": " de OnlyCourses"
+    }
+  },
   "LanguageSelector": {
     "label": "Selecciona el idioma",
     "en": "Inglés",

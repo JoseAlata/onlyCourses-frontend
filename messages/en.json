@@ -22,6 +22,31 @@
       "login": "Login"
     }
   },
+  "Register":{
+    "title": "Sign Up",
+    "subtitle": "What is your function?",
+    "roles": {
+      "student": "Student",
+      "teacher": "Teacher"
+    },
+    "fields":{
+      "name": "Name",
+      "lastname": "Lastname",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "buttons":{
+      "register": "Register"
+    },
+    "terms": {
+      "text": "By registering, I accept the",
+      "termsAndConditions": "terms and conditions",
+      "and": "and the",
+      "privacyPolicy": "privacy policy",
+      "final": " of OnlyCourses"
+    }
+  },
   "LanguageSelector": {
     "label": "Select Language",
     "en": "English",
