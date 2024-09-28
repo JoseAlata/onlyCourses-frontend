@@ -47,11 +47,11 @@
       color: #0e77ea;
     }
   }
-  &-actions{
+  &-actions {
     display: flex;
     flex-direction: column;
     align-items: end;
-    &>a:hover{
+    & > a:hover {
       color: var(--oc-primary);
       text-decoration: underline;
     }
