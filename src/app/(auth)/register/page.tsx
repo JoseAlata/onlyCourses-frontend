@@ -6,6 +6,7 @@ import RegisterRole from '@/auth/components/register-role';
 import { useTranslations } from 'next-intl';
 import './register.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { getFields, groupedFields } from './register.constants';
 
@@ -67,6 +68,9 @@ export default function Register() {
             </div>
             <div className="register-actions">
               <OcButton>{t('buttons.register')}</OcButton>
+              <Link href="/login">
+                <span className="oc-typo-body-small">{t('buttons.hasAccount')}</span>
+              </Link>
             </div>
           </section>
         </div>

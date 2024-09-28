@@ -19,25 +19,27 @@
       "forgotPassword": "Forgot Password?"
     },
     "buttons": {
-      "login": "Login"
+      "login": "Login",
+      "create": "Create Account"
     }
   },
-  "Register":{
+  "Register": {
     "title": "Sign Up",
     "subtitle": "What is your function?",
     "roles": {
       "student": "Student",
       "teacher": "Teacher"
     },
-    "fields":{
+    "fields": {
       "name": "Name",
       "lastname": "Lastname",
       "email": "Email",
       "password": "Password",
       "confirmPassword": "Confirm Password"
     },
-    "buttons":{
-      "register": "Register"
+    "buttons": {
+      "register": "Register",
+      "hasAccount": "Already have an account?"
     },
     "terms": {
       "text": "By registering, I accept the",
