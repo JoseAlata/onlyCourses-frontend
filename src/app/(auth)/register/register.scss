@@ -57,4 +57,13 @@
     text-underline-offset: 0.2em;
     color: var(--oc-primary);
   }
+  &-actions{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    &>a:hover{
+      color: var(--oc-primary);
+      text-decoration: underline;
+    }
+  }
 }

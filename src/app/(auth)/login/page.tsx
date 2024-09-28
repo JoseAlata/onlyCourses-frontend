@@ -3,6 +3,7 @@ import './login.scss';
 import AuthBackground from '@/auth/components/auth-background';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import OcButton from '../../shared/components/oc-button';
 import OcInput from '../../shared/components/oc-input/oc-input';
@@ -33,13 +34,16 @@ export default function Login() {
             </label>
             <div className="login-footer">
               <div className="login-footer__remember oc-gap-medium">
-                <input type="checkbox" required />
+                <input type="checkbox" />
                 <span className="oc-typo-label-medium">{t('footer.rememberMe')}</span>
               </div>
               <span className="login-footer__forgot oc-typo-label-medium">{t('footer.forgotPassword')}</span>
             </div>
-            <div className="login-actions">
+            <div className="login-actions oc-gap-medium">
               <OcButton>{t('buttons.login')}</OcButton>
+              <Link href="/register">
+                <span className="oc-typo-body-small">{t('buttons.create')}</span>
+              </Link>
             </div>
           </section>
         </div>

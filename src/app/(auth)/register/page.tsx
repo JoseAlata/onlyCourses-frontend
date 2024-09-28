@@ -8,6 +8,7 @@ import './register.scss';
 import Image from 'next/image';
 
 import { getFields, groupedFields } from './register.constants';
+import Link from 'next/link';
 
 export default function Register() {
   const t = useTranslations('Register');
@@ -67,6 +68,9 @@ export default function Register() {
             </div>
             <div className="register-actions">
               <OcButton>{t('buttons.register')}</OcButton>
+              <Link href="/login">
+                <span className="oc-typo-body-small">{t('buttons.hasAccount')}</span>
+              </Link>
             </div>
           </section>
         </div>
