@@ -1,10 +1,14 @@
 // Indica que este componente es un Client Component
 'use client';
-import { Login } from '@/app/login';
+
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+
 export default function Home() {
-  return (
-    <section className="h-screen">
-      <Login />
-    </section>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/login');
+  }, [router]);
+  return <section className="h-screen"></section>;
 }
