@@ -1,7 +1,7 @@
 import './oc-selector-language.scss';
-import React, { ChangeEvent } from 'react';
-import { setUserLocale } from '@/services/locale';
 import { Locale } from '@/i18n/config';
+import { setUserLocale } from '@/services/locale';
+import React, { ChangeEvent } from 'react';
 import { useTransition } from 'react';
 
 interface ItemProps {

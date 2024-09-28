@@ -1,24 +1,33 @@
 'use client';
 import { useState, useEffect } from 'react';
+
 import './oc-input.scss';
 import OcIcon from '../oc-icon/oc-icon';
 
 interface OcInputProps {
   placeholder: string;
+  type?: string;
   nameIcon?: string;
   right?: boolean;
   disabled?: boolean;
   rules?: Array<(value: string) => string | true>;
 }
 
-export default function OcInput({ disabled, placeholder, right, nameIcon, rules = [] }: Readonly<OcInputProps>) {
+export default function OcInput({
+  type = 'text',
+  disabled,
+  placeholder,
+  right,
+  nameIcon,
+  rules = [],
+}: Readonly<OcInputProps>) {
   const [inputValue, setInputValue] = useState('');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const inputDisabled = disabled || false;
 
   useEffect(() => {
     const validate = () => {
-      for (let rule of rules) {
+      for (const rule of rules) {
         const result = rule(inputValue);
         if (result !== true) {
           setErrorMessage(result);
@@ -41,7 +50,7 @@ export default function OcInput({ disabled, placeholder, right, nameIcon, rules 
         )}
 
         <input
-          type="text"
+          type={type}
           placeholder={placeholder}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
