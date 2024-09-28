@@ -4,9 +4,9 @@ import OcTheme from '@/app/shared/components/oc-theme';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-import OcButton from '../shared/components/oc-button';
-import OcInput from '../shared/components/oc-input/oc-input';
-import OcLanguage from '../shared/components/oc-language';
+import OcButton from '../../shared/components/oc-button';
+import OcInput from '../../shared/components/oc-input/oc-input';
+import OcLanguage from '../../shared/components/oc-language';
 
 export default function Login() {
   const t = useTranslations('Login');

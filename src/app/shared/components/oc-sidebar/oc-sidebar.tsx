@@ -1,36 +1,62 @@
 'use-client';
 import { useTranslations } from 'next-intl';
-import OcTheme from '../oc-theme';
-import MenuItem from './oc-menu-item/oc-menu-item';
-import './oc-sidebar.scss';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import OcLanguage from '../oc-language';
-import { menuItemData } from './menuItemdata';
+import MenuItem from './oc-menu-item/oc-menu-item';
+import { handleSidebarResize, menuItemData } from './oc-sidebar.constants';
+import './oc-sidebar.scss';
+import OcIcon from '../oc-icon';
 
-interface OcSideBarProps {}
-
-export default function OcSideBar({}: Readonly<OcSideBarProps>) {
+export default function OcSideBar() {
+  const [open, setOpen] = useState(false);
   const t = useTranslations('HomePage');
   const logoImage = 'https://i.postimg.cc/28hLspF6/yachay-logo-completo.png';
+  const logoImageShort = 'https://i.postimg.cc/Y9r5BnTD/YachayL.png';
+  const pathname = usePathname();
+
+  const handleSetOpen = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    handleSidebarResize(handleSetOpen);
+  }, []);
+
   return (
-    <aside className="sidebar oc-padding-medium oc-gap-xlarge min-h-screen max-w-60 flex-col">
+    <div className={`sidebar oc-padding-medium oc-gap-xlarge ${open ? 'w-52' : 'w-20'}`}>
+      <div className={`sidebar-arrow oc-shape-full ${!open && 'rotate-180'}`} onClick={() => setOpen(!open)}>
+        <OcIcon name="arrow_back" fontZize="small" />
+      </div>
       <Image
-        src={logoImage}
+        className="sidebar-logo"
+        src={`${!open ? logoImageShort : logoImage}`}
         alt="sidebar-logo"
         width={1200}
         height={500}
         style={{ maxWidth: '100%', height: 'auto' }}
       />
-
-      <section className="">
-        <h3 className="oc-typo-text-less oc-typo-headline-small">Menu</h3>
+      <section className="oc-gap-large flex flex-col">
+        <span className={` ${!open && 'hidden'} sidebar-title-section oc-typo-text-less oc-typo-headline-small`}>
+          Menu
+        </span>
         <div className="oc-gap-medium oc-typo-text-less flex flex-col">
-          {menuItemData.map((item) => (
-            <MenuItem nameIcon={item.nameIcon} nameItem={t(`sidebar.menu-item-${item.nameItem}`)} />
-          ))}
+          {menuItemData.map((item, index) => {
+            const isActive = pathname.startsWith(item.pathItem);
+            return (
+              <MenuItem
+                key={index}
+                open={open}
+                isActived={isActive}
+                nameIcon={item.nameIcon}
+                pathItem={item.pathItem}
+                nameItem={t(`sidebar.menu-item-${item.nameItem}`)}
+              />
+            );
+          })}
         </div>
       </section>
       <hr className="sidebar-hr" />
-    </aside>
+    </div>
   );
 }
