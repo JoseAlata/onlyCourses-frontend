@@ -1,6 +1,7 @@
+import Image from 'next/image';
+
 import OcIcon from '../oc-icon';
 import OcInput from '../oc-input/oc-input';
-import Image from 'next/image';
 import './oc-header.scss';
 import OcTheme from '../oc-theme';
 interface HeaderProps {}

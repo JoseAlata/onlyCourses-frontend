@@ -1,4 +1,3 @@
-'use client';
 import { useState, useEffect } from 'react';
 
 import './oc-input.scss';
@@ -11,6 +10,9 @@ interface OcInputProps {
   right?: boolean;
   disabled?: boolean;
   rules?: Array<(value: string) => string | true>;
+  onFocus?: () => void; // Evento onFocus opcional
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; // Evento onChange opcional
+  value?: string; // Agregamos la prop value
 }
 
 export default function OcInput({
@@ -20,25 +22,29 @@ export default function OcInput({
   right,
   nameIcon,
   rules = [],
+  onFocus, // Capturamos onFocus
+  onChange, // Capturamos onChange
+  value, // Capturamos la prop value
 }: Readonly<OcInputProps>) {
-  const [inputValue, setInputValue] = useState('');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const inputDisabled = disabled || false;
 
   useEffect(() => {
     const validate = () => {
-      for (const rule of rules) {
-        const result = rule(inputValue);
-        if (result !== true) {
-          setErrorMessage(result);
-          return;
+      if (value) {
+        for (const rule of rules) {
+          const result = rule(value);
+          if (result !== true) {
+            setErrorMessage(result);
+            return;
+          }
         }
+        setErrorMessage(null);
       }
-      setErrorMessage(null);
     };
 
     validate();
-  }, [inputValue, rules]);
+  }, [value, rules]);
 
   return (
     <div className="oc-input">
@@ -52,8 +58,13 @@ export default function OcInput({
         <input
           type={type}
           placeholder={placeholder}
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          value={value} // Utilizamos la prop value directamente
+          onChange={(e) => {
+            if (onChange) {
+              onChange(e);
+            }
+          }}
+          onFocus={onFocus}
           className={`oc-shape-medium ${nameIcon ? (right ? 'oc-padding-right' : 'oc-padding-left') : ''} oc-padding-small`}
           disabled={inputDisabled}
         />

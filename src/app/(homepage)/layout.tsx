@@ -1,6 +1,6 @@
 'use client';
-import OcSideBar from '@/app/shared/components/oc-sidebar';
 import Header from '@/app/shared/components/oc-header';
+import OcSideBar from '@/app/shared/components/oc-sidebar';
 import './homepage.scss';
 
 export default function CoursesLayout({
