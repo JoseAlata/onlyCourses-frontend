@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import OcInput from '../oc-input/oc-input'; // Asegúrate de que la ruta sea correcta
+
+import OcInput from '../oc-input/oc-input';
 import './oc-dropdown.scss';
 
 interface OcInputProps {
@@ -9,13 +10,24 @@ interface OcInputProps {
   right?: boolean;
   disabled?: boolean;
   rules?: Array<(value: string) => string | true>;
+  children?: React.ReactNode; // Nueva prop para los children
 }
 
 interface DropdownProps extends OcInputProps {
   options: string[];
+  onOptionSelect: (option: string) => void;
 }
 
-export default function Dropdown({ placeholder, type, nameIcon, right, disabled, rules, options }: DropdownProps) {
+export default function Dropdown({
+  placeholder,
+  type,
+  right,
+  disabled,
+  rules,
+  options,
+  onOptionSelect,
+  children,
+}: DropdownProps) {
   const [inputValue, setInputValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [optionSelected, setOptionSelected] = useState(false);
@@ -54,6 +66,7 @@ export default function Dropdown({ placeholder, type, nameIcon, right, disabled,
     setInputValue(option);
     setOptionSelected(true);
     setIsOpen(false);
+    onOptionSelect(option);
   };
 
   return (
@@ -61,14 +74,15 @@ export default function Dropdown({ placeholder, type, nameIcon, right, disabled,
       <OcInput
         placeholder={placeholder}
         type={type}
-        nameIcon={nameIcon}
         right={right}
         disabled={disabled}
         rules={rules}
         onFocus={handleFocus}
         onChange={handleChange}
         value={inputValue}
-      />
+      >
+        {children}
+      </OcInput>
       {isOpen && !optionSelected && (
         <ul className="dropdown-list">
           {filteredOptions.length > 0 ? (
