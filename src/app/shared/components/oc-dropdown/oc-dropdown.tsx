@@ -10,7 +10,8 @@ interface OcInputProps {
   right?: boolean;
   disabled?: boolean;
   rules?: Array<(value: string) => string | true>;
-  children?: React.ReactNode; // Nueva prop para los children
+  children?: React.ReactNode;
+  className?: string; // Agregar className aquí
 }
 
 interface DropdownProps extends OcInputProps {
@@ -27,11 +28,15 @@ export default function Dropdown({
   options,
   onOptionSelect,
   children,
+  className,
 }: DropdownProps) {
   const [inputValue, setInputValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [optionSelected, setOptionSelected] = useState(false);
-  const filteredOptions = options.filter((option) => option.toLowerCase().includes(inputValue.toLowerCase()));
+
+  const filteredOptions = Array.isArray(options)
+    ? options.filter((option) => typeof option === 'string' && option.toLowerCase().includes(inputValue.toLowerCase()))
+    : [];
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -80,6 +85,7 @@ export default function Dropdown({
         onFocus={handleFocus}
         onChange={handleChange}
         value={inputValue}
+        className={className}
       >
         {children}
       </OcInput>
