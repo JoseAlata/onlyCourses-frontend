@@ -1,1 +1,1 @@
-export { default as MyCourses } from './page';
+export { default as Profile } from './page';

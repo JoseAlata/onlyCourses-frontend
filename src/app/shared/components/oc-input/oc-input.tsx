@@ -11,7 +11,8 @@ interface OcInputProps {
   onFocus?: () => void;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
-  children?: React.ReactNode; // Aceptamos children como prop
+  children?: React.ReactNode;
+  className?: string;
 }
 
 export default function OcInput({
@@ -19,12 +20,12 @@ export default function OcInput({
   disabled,
   placeholder,
   right,
-  nameIcon, // Este valor puede ser reemplazado por el uso de children
   rules = [],
   onFocus,
   onChange,
   value,
-  children, // Recibimos los hijos (OcIcon o OcButton)
+  children,
+  className = '',
 }: Readonly<OcInputProps>) {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const inputDisabled = disabled || false;
@@ -47,7 +48,9 @@ export default function OcInput({
   }, [value, rules]);
 
   return (
-    <div className="oc-input">
+    <div className={`oc-input ${className}`}>
+      {' '}
+      {/* Agregamos className aquí */}
       <div className={`oc-input-wrapper ${inputDisabled ? 'disabled' : ''}`}>
         {children && (
           <div className={`oc-icon-container ${right ? 'input-right' : 'input-left'}`}>

@@ -1,0 +1,101 @@
+.profile{
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   flex-direction: column;
+   gap: 1.5em;
+   & h1{
+      font-size: 32px;
+      padding-bottom: 1em;
+      width: 90%;
+      margin: 0 auto;
+   }
+   &-infoGeneral{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      gap: 3em;
+   }
+   &-separator{
+      width: 1px;
+      background-color: gray;
+   }
+   &-buttons{
+      width: 35%;
+      display: flex;
+      gap: 2em;
+   }
+   &-infoNames{
+      width: 50%;
+      display: flex;
+      gap: 1em;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+   &-Names{
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      flex: 1;
+   }
+   &-image{
+      border-radius: 50%;
+   }
+   &-containerNames{
+      display: flex;
+      width: 100%;
+   }
+   &-input{
+      flex: 1;
+   }
+   &-containerButtons{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1em;
+   }
+   &-gmail{
+      margin-right: 0.5em;
+   }
+   &-note{
+      display: flex;
+      flex-direction: column;
+      width: 92%;
+      margin: 1em auto;
+      & h2{
+         font-size: 24px;
+      }
+   }
+   &-infoEspecific{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+   }
+   &-inputEspecific{
+      width: 50%;
+      display: grid;
+      grid-template-columns: repeat(10,1fr);
+      gap: 1em;
+   }
+   &-label{
+      grid-column: span 2;
+   }
+   &-input{
+      grid-column: span 7;
+   }
+   &-button{
+      grid-column: span 1;
+   }
+   &-Image{
+      width: 40%;
+   }
+   &-submit{
+      margin-top: 3rem;
+      width: 200px;
+      margin: 0 auto;
+   }
+
+}
+
