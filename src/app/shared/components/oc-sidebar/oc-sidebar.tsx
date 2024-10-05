@@ -1,8 +1,9 @@
 'use-client';
 import { useTranslations } from 'next-intl';
-import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
+
 import MenuItem from './oc-menu-item/oc-menu-item';
 import { handleSidebarResize, menuItemData } from './oc-sidebar.constants';
 import './oc-sidebar.scss';
