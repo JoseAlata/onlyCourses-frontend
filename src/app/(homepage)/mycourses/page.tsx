@@ -1,7 +1,8 @@
 'use client';
 import useCourses from '@/courses/hooks/use-courses';
 import './mycourses.scss';
-import Image from 'next/image';
+
+import CourseCard from '@/app/shared/components/oc-courses-card';
 
 export default function MyCourses() {
   const { courses, loading } = useCourses();
@@ -10,22 +11,11 @@ export default function MyCourses() {
     return <h1>Cargando...</h1>;
   }
   return (
-    <div>
+    <div className="">
       <h1 className="oc-typo-headline-medium">Cursos disponibles</h1>
-      <ul>
+      <ul className="flex flex-wrap justify-center gap-3">
         {courses.map((course) => (
-          <article key={course.name}>
-            <h2>{course.name}</h2>
-            <p>{course.description}</p>
-            <span>{course.hasDiscount}</span>
-            <Image
-              src={course.banner}
-              alt={course.name}
-              width={1200}
-              height={500}
-              style={{ maxWidth: '100%', height: 'auto' }}
-            />
-          </article>
+          <CourseCard key={course.name} course={course} />
         ))}
       </ul>
     </div>

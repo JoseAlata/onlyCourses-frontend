@@ -9,7 +9,7 @@ export default function CoursesLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section className="flex">
+    <section className="flex min-h-screen">
       <div>
         <OcSideBar />
       </div>
