@@ -8,6 +8,8 @@ import MenuItem from './oc-menu-item/oc-menu-item';
 import { handleSidebarResize, menuItemData } from './oc-sidebar.constants';
 import './oc-sidebar.scss';
 import OcIcon from '../oc-icon';
+import { AuthService } from '@/auth/services/auth.service';
+import { useRouter } from 'next/navigation';
 
 export default function OcSideBar() {
   const [open, setOpen] = useState(false);
@@ -15,6 +17,15 @@ export default function OcSideBar() {
   const logoImage = 'https://i.postimg.cc/28hLspF6/yachay-logo-completo.png';
   const logoImageShort = 'https://i.postimg.cc/Y9r5BnTD/YachayL.png';
   const pathname = usePathname();
+  const router = useRouter();
+  const authService = new AuthService();
+
+  const handleLogout = () => {
+    authService.logout();
+    setTimeout(() => {
+      router.push('/login');
+    }, 2000);
+  };
 
   const handleSetOpen = () => {
     setOpen(false);
@@ -58,6 +69,7 @@ export default function OcSideBar() {
         </div>
       </section>
       <hr className="sidebar-hr" />
+      <button onClick={handleLogout}>salir</button>
     </div>
   );
 }
