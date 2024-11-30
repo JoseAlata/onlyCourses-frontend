@@ -1,6 +1,7 @@
-import { CoursesResult } from '../data';
+import { AddCourseResult, Course, CoursesResult } from '../data';
 
 export interface ICourseService {
-  getAllCourses(): Promise<CoursesResult>;
-  getDiscountedCourses(): Promise<CoursesResult>;
+  getAllCourses(token: string): Promise<CoursesResult>;
+  getDiscountedCourses(token: string): Promise<CoursesResult>;
+  addCourse(data: Course, token: string): Promise<AddCourseResult>;
 }

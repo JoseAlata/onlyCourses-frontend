@@ -13,7 +13,7 @@ export default function CourseCard({ course }: OcCourseCardProps) {
       <div className="course-card-image">
         <Image
           className="sidebar-logo"
-          src={course.banner}
+          src={course.bannerUrl}
           alt="sidebar-logo"
           width={1200}
           height={500}
@@ -21,7 +21,7 @@ export default function CourseCard({ course }: OcCourseCardProps) {
         />
       </div>
       <div className="oc-gap-medium flex flex-col justify-between">
-        <p className="oc-typo-body-medium course-card-name">{course.name}</p>
+        <p className="oc-typo-body-medium course-card-name">{course.courseTitle}</p>
 
         <div className="oc-typo-body-small flex items-center justify-between">
           <div className="oc-gap-medium flex items-center">
@@ -39,7 +39,7 @@ export default function CourseCard({ course }: OcCourseCardProps) {
           </div>
           <div className="flex items-center">
             <OcIcon name="favorite"></OcIcon>
-            <span className="">{course.rating}</span>
+            <span className="">{course.courseId}</span>
           </div>
         </div>
       </div>
