@@ -1,9 +1,9 @@
 'use client';
-import useCourses from '@/courses/hooks/use-courses';
 import './mycourses.scss';
 
 import CourseCard from '@/app/shared/components/oc-courses-card';
 import useUser from '@/auth/hooks/use-user';
+import useCourses from '@/courses/hooks/use-courses';
 
 export default function MyCourses() {
   const { user, loadingUser } = useUser();

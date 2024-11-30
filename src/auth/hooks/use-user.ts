@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { AuthService } from '../services/auth.service';
 import { User } from '../model/auth.model.types';
+import { AuthService } from '../services/auth.service';
 
 const authService = new AuthService();
 

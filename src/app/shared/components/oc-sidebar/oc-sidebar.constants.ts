@@ -15,9 +15,9 @@ export const menuItemData: MenuItemData[] = [
     pathItem: '/mycourses',
   },
   {
-    nameIcon: 'insert_chart',
-    nameItem: 'progress',
-    pathItem: '#',
+    nameIcon: 'add_circle',
+    nameItem: 'create',
+    pathItem: '/addcourse',
   },
 ];
 

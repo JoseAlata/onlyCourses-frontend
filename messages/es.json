@@ -3,7 +3,7 @@
     "sidebar": {
       "menu-item-home": "Inicio",
       "menu-item-courses": "Cursos",
-      "menu-item-progress": "Progreso",
+      "menu-item-create": "Crear Curso",
       "change-theme": "Cambiar Tema"
     }
   },
