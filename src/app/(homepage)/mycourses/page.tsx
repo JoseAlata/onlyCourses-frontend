@@ -9,6 +9,7 @@ export default function MyCourses() {
   const { user, loadingUser } = useUser();
   const { courses, loading } = useCourses();
   console.log(user);
+  console.log(courses);
   console.debug('Rendering MyCourses:', { courses, loading });
   if (loading && loadingUser) {
     return <h1>Cargando...</h1>;
@@ -20,7 +21,7 @@ export default function MyCourses() {
 
       <ul className="flex flex-wrap justify-center gap-3">
         {courses.map((course) => (
-          <CourseCard key={course.name} course={course} />
+          <CourseCard key={course.courseTitle} course={course} />
         ))}
       </ul>
     </div>

@@ -1,18 +1,19 @@
-import { CourseModel } from './courses.model.types';
+import { CourseModel, AddCourseModel, Section } from './courses.model.types';
 
 export class Course implements CourseModel {
-  banner: string = '';
-  benefits: string = '';
-  category: string = '';
+  courseId: string = '';
+  courseTitle: string = '';
   description: string = '';
-  discount: number = 0;
-  filesCount: string = '';
-  language: string = '';
-  name: string = '';
   price: number = 0;
-  rating: number = 0;
-  resume: string = '';
-  targetPublic: string = '';
+  discount: number = 0;
+  category: string = '';
+  bannerUrl: string = '';
+  topicsCovered: string = '';
+  learningOutcomes: string = '';
+  courseOverview: string = '';
+  targetAudience: string = '';
+  userId: string = '';
+  sections: Section[] = [];
 
   public constructor(course: CourseModel) {
     Object.assign(this, { ...course });
@@ -25,12 +26,9 @@ export class Course implements CourseModel {
   public get priceWithDiscount(): number {
     return this.price - (this.price * this.discount) / 100;
   }
+}
 
-  public get ratingPercentage(): number {
-    return (this.rating * 100) / 5;
-  }
-
-  public get ratingPercentageString(): string {
-    return `${this.ratingPercentage}%`;
-  }
+export class AddCourse implements AddCourseModel {
+  message: string = '';
+  courseId: string = '';
 }
